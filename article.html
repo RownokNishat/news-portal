@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Article - StartupMind</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <a href="index.html" class="logo-link">
+              <span class="logo-icon">📰</span>
+              <span class="logo-text">StartupMind</span>
+            </a>
+          </div>
+
+          <nav class="nav">
+            <button class="hamburger" id="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li>
+                <a href="index.html?category=national" class="nav-link"
+                  >National</a
+                >
+              </li>
+              <li>
+                <a href="index.html?category=international" class="nav-link"
+                  >International</a
+                >
+              </li>
+              <li>
+                <a href="index.html?category=sports" class="nav-link">Sports</a>
+              </li>
+              <li>
+                <a href="index.html?category=technology" class="nav-link"
+                  >Technology</a
+                >
+              </li>
+              <li>
+                <a href="index.html?category=business" class="nav-link"
+                  >Business</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <div class="header-search">
+            <form class="search-form" id="searchForm">
+              <input
+                type="text"
+                class="search-input"
+                id="searchInput"
+                placeholder="Search news..."
+                autocomplete="off"
+              />
+              <button type="submit" class="search-btn">🔍</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Article Content -->
+    <main class="main-content article-page">
+      <div class="container">
+        <!-- Back Link -->
+        <a href="index.html" class="back-link">← Back to News</a>
+
+        <!-- Article Container -->
+        <article class="article-container" id="articleContainer">
+          <div class="article-meta">
+            <span class="article-category" id="articleCategory"></span>
+            <span class="article-date" id="articleDate"></span>
+          </div>
+
+          <h1 class="article-title" id="articleTitle"></h1>
+
+          <div class="article-image-wrapper">
+            <img src="" alt="" class="article-image" id="articleImage" />
+          </div>
+
+          <div class="article-body" id="articleBody">
+            <!-- Content populated by JavaScript -->
+          </div>
+
+          <div class="article-footer">
+            <div class="article-tags" id="articleTags">
+              <!-- Tags populated by JavaScript -->
+            </div>
+          </div>
+        </article>
+
+        <!-- Related Articles -->
+        <section class="related-articles">
+          <h2>Related Articles</h2>
+          <div class="related-grid" id="relatedGrid">
+            <!-- Populated by JavaScript -->
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>About StartupMind</h4>
+            <p>Your trusted source for news and information.</p>
+          </div>
+          <div class="footer-section">
+            <h4>Categories</h4>
+            <ul>
+              <li><a href="index.html?category=national">National</a></li>
+              <li>
+                <a href="index.html?category=international">International</a>
+              </li>
+              <li><a href="index.html?category=sports">Sports</a></li>
+              <li><a href="index.html?category=technology">Technology</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+              <a href="#" class="social-link">Facebook</a>
+              <a href="#" class="social-link">Twitter</a>
+              <a href="#" class="social-link">Instagram</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 StartupMind. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/article.js"></script>
+  </body>
+</html>
