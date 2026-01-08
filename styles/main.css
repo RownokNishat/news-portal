@@ -165,6 +165,34 @@ body {
   }
 }
 
+@keyframes fireFlame {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.1) rotate(-2deg);
+  }
+  50% {
+    transform: scale(1.15) rotate(2deg);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(1.1) rotate(-1deg);
+  }
+}
+
+@keyframes latestNewsUnderline {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
 /* ===== CONTAINER ===== */
 .container {
   max-width: 1200px;
@@ -483,6 +511,30 @@ body {
   background: linear-gradient(90deg, var(--primary-color), transparent);
   border-radius: 2px;
   animation: slideInUnderline 0.8s ease-out 0.5s both;
+}
+
+/* Fire icon animation */
+.fire-icon {
+  display: inline-block;
+  animation: fireFlame 1.2s ease-in-out infinite;
+  transform-origin: center;
+  margin-right: 4px;
+}
+
+/* Latest News header with underline */
+.news-section .section-title {
+  animation: fadeInLeft 0.6s ease-out 0.3s both;
+}
+
+.news-section .latest-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
+  animation: latestNewsUnderline 1s ease-out 0.4s both;
 }
 
 .trending-grid {
