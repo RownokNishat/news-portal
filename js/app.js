@@ -391,6 +391,9 @@ function displayArticles() {
 
   newsGrid.innerHTML += html;
 
+  // Trigger scroll animations for newly added cards
+  observeElements();
+
   // Update Load More button visibility
   const hasMore = endIndex < appState.filteredArticles.length;
   loadMoreBtn.style.display = hasMore ? "block" : "none";
@@ -451,4 +454,47 @@ if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initializeApp);
 } else {
   initializeApp();
+}
+
+// ===== INTERSECTION OBSERVER FOR SCROLL ANIMATIONS =====
+// Observes when elements enter viewport and triggers animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px",
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.style.animation = entry.target.getAttribute("data-animation")
+        ? `${entry.target.getAttribute("data-animation")} 0.6s ease-out forwards`
+        : "fadeInUp 0.6s ease-out forwards";
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// Observe all news cards for scroll animation
+function observeElements() {
+  const cards = document.querySelectorAll(".news-card");
+  cards.forEach((card, index) => {
+    if (!card.dataset.observed) {
+      card.style.opacity = "0";
+      observer.observe(card);
+      card.dataset.observed = "true";
+    }
+  });
+}
+
+// Call observe after displaying articles
+document.addEventListener("articlesDisplayed", observeElements);
+
+// Smooth scroll to section on filter/search
+function smoothScrollToSection(elementId, delay = 300) {
+  setTimeout(() => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, delay);
 }
