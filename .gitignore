@@ -8,7 +8,6 @@ ehthumbs.db
 Thumbs.db
 
 # IDE & Editor Files
-.vscode/
 .idea/
 *.swp
 *.swo
@@ -42,6 +41,5 @@ logs/
 .cache/
 
 # Environment files
-.env
-.env.local
 .env.*.local
+config.bat
